@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:padding="@dimen/fifteen_dp"
+            tools:context=".activities.LoginActivity">
+
+            <com.routinetracker.utils.views.AppTextView
+                android:id="@+id/txtHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteen_dp"
+                android:text="@string/welcome"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.routinetracker.utils.views.AppEditText
+                android:id="@+id/edtEmailAddress"
+                style="@style/GeneralEditText"
+                android:layout_marginTop="@dimen/fifteen_dp"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHeading" />
+
+            <com.routinetracker.utils.views.AppEditText
+                android:id="@+id/edtPassword"
+                style="@style/GeneralEditText"
+                android:layout_marginTop="@dimen/fifteen_dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtEmailAddress" />
+
+            <com.routinetracker.utils.views.AppTextView
+                android:id="@+id/txtLogin"
+                style="@style/NormalButtonStyle"
+                android:layout_marginTop="@dimen/fifteen_dp"
+                android:text="@string/login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+            <com.routinetracker.utils.views.AppTextView
+                android:id="@+id/txtForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty_dp"
+                android:layout_marginEnd="@dimen/ten_dp"
+                android:padding="@dimen/five_dp"
+                android:text="@string/forgot_password"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLogin" />
+
+            <com.routinetracker.utils.views.AppTextView
+                android:id="@+id/txtNewUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty_dp"
+                android:padding="@dimen/ten_dp"
+                android:text="@string/new_user"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

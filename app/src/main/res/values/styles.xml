@@ -1,0 +1,86 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/fourteen_sp</item>
+        <!--        <item name="android:background">@drawable/bg_custom_btn_app_color</item>-->
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">@dimen/sixty_dp</item>
+        <item name="android:layout_margin">@dimen/seven_dp</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:paddingLeft">@dimen/twelve_dp</item>
+        <item name="android:paddingRight">@dimen/twelve_dp</item>
+        <item name="android:paddingTop">@dimen/seven_dp</item>
+        <item name="android:paddingBottom">@dimen/seven_dp</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="DashboardButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/eighteen_sp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/fifteen_dp</item>
+        <item name="android:paddingEnd">@dimen/fifteen_dp</item>
+        <item name="android:paddingBottom">@dimen/twelve_dp</item>
+        <item name="android:paddingTop">@dimen/twelve_dp</item>
+        <item name="android:layout_marginEnd">@dimen/seven_dp</item>
+        <item name="android:layout_marginTop">@dimen/seven_dp</item>
+        <item name="android:layout_marginBottom">@dimen/seven_dp</item>
+        <item name="android:layout_marginStart">@dimen/seven_dp</item>
+    </style>
+
+    <style name="NormalButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/twenty_two_sp</item>
+        <item name="android:background">@drawable/ic_btn_selector</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/fifteen_dp</item>
+        <item name="android:paddingEnd">@dimen/fifteen_dp</item>
+        <item name="android:paddingBottom">@dimen/ten_dp</item>
+        <item name="android:paddingTop">@dimen/ten_dp</item>
+        <item name="android:layout_marginEnd">@dimen/ten_dp</item>
+        <item name="android:layout_marginTop">@dimen/ten_dp</item>
+        <item name="android:layout_marginBottom">@dimen/ten_dp</item>
+        <item name="android:layout_marginStart">@dimen/ten_dp</item>
+
+    </style>
+
+    <style name="GeneralEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">@dimen/sixteen_sp</item>
+        <item name="android:background">@drawable/bg_selected_card</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColorHint">@color/colorGrey</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/fifteen_dp</item>
+        <item name="android:paddingEnd">@dimen/fifteen_dp</item>
+        <item name="android:paddingBottom">@dimen/twelve_dp</item>
+        <item name="android:paddingTop">@dimen/twelve_dp</item>
+        <item name="android:layout_marginEnd">@dimen/ten_dp</item>
+        <item name="android:layout_marginTop">@dimen/ten_dp</item>
+        <item name="android:layout_marginBottom">@dimen/ten_dp</item>
+        <item name="android:layout_marginStart">@dimen/ten_dp</item>
+    </style>
+
+</resources>
