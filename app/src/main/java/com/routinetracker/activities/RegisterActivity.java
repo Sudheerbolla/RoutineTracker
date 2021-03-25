@@ -1,5 +1,6 @@
 package com.routinetracker.activities;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,8 @@ import com.routinetracker.utils.dbutils.DBHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Calendar;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
@@ -38,18 +41,27 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.txtLogin:
+            case R.id.txtRegister:
                 performLogin();
                 break;
             case R.id.txtExistingUser:
                 onBackPressed();
                 break;
             case R.id.txtDOB:
-                StaticUtils.showToast(this, R.string.module_under_development);
+                openDatePicker();
                 break;
             default:
                 break;
         }
+    }
+
+    private void openDatePicker() {
+        final Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view, year, monthOfYear, dayOfMonth) -> activityRegisterBinding.txtDOB.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year), mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 
     private void performLogin() {
@@ -94,7 +106,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             activityRegisterBinding.edtEmailAddress.requestFocus();
             return "Please enter Email Address";
         }
-        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             activityRegisterBinding.edtEmailAddress.requestFocus();
             return "Please enter a valid Email Address";
         }

@@ -53,10 +53,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         if (TextUtils.isEmpty(validationMessage)) {
             String email = activityLoginBinding.edtEmailAddress.getText().toString().trim();
             String password = activityLoginBinding.edtPassword.getText().toString().trim();
-            if (new DBHelper(this).performLogin( email, password)) {
+            if (new DBHelper(this).performLogin(email, password)) {
                 startActivity(new Intent(this, MainActivity.class));
                 finishAffinity();
             } else {
+//                StaticUtils.showToast(this, "User doesn't exist in our records. Please register first.");
                 startActivity(new Intent(this, RegisterActivity.class));
 //                startActivity(new Intent(this, MainActivity.class));
 //                finishAffinity();
@@ -71,7 +72,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             activityLoginBinding.edtEmailAddress.requestFocus();
             return "Please enter Email Address";
         }
-        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             activityLoginBinding.edtEmailAddress.requestFocus();
             return "Please enter a valid Email Address";
         }

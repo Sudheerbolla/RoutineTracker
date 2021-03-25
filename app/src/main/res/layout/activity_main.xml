@@ -57,6 +57,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtShareCurrentLocation" />
 
+        <com.routinetracker.utils.views.AppTextView
+            android:id="@+id/txtLogout"
+            style="@style/DashboardButtonStyle"
+            android:text="@string/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtViewTodaysLocations" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

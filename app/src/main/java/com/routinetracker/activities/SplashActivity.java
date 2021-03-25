@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
-import android.util.Log;
 
 import com.routinetracker.R;
 import com.routinetracker.utils.AppStorage;
@@ -16,13 +14,12 @@ public class SplashActivity extends BaseActivity {
     @Override
     void initComponents() {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            if (!TextUtils.isEmpty(AppStorage.getInstance(this).getValue(AppStorage.SP_USER_ID, ""))) {
+            if (AppStorage.getInstance(this).getValue(AppStorage.SP_USER_ID, -1L) == -1) {
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                finish();
             } else {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                finish();
             }
+            finish();
         }, Constants.SPLASH_LOADING_TIME);
     }
 

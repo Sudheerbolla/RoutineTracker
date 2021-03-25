@@ -20,6 +20,8 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.routinetracker.R;
 import com.routinetracker.databinding.ActivityMainBinding;
+import com.routinetracker.utils.AppStorage;
+import com.routinetracker.utils.DialogUtils;
 import com.routinetracker.utils.StaticUtils;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -39,6 +41,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         activityMainBinding.txtStopTracking.setOnClickListener(this);
         activityMainBinding.txtViewUsers.setOnClickListener(this);
         activityMainBinding.txtViewTodaysLocations.setOnClickListener(this);
+        activityMainBinding.txtLogout.setOnClickListener(this);
     }
 
     @Override
@@ -140,6 +143,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.txtViewTodaysLocations:
                 StaticUtils.showToast(this, getString(R.string.module_under_development));
+                break;
+            case R.id.txtLogout:
+                DialogUtils.showTwoButtonDialog(this, "Are you Sure you want to Logout?", "Logout", "Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        AppStorage.getInstance(MainActivity.this).clear();
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        finishAffinity();
+                    }
+                });
                 break;
             default:
                 break;

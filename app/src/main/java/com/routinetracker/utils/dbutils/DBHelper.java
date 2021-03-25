@@ -8,6 +8,7 @@ import com.routinetracker.models.UsersModel;
 import com.routinetracker.utils.AppStorage;
 import com.routinetracker.utils.Constants;
 import com.routinetracker.utils.PasswordsUtils;
+import com.routinetracker.utils.StaticUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -79,12 +80,15 @@ public class DBHelper {
                 AppStorage.getInstance(context).setValue(AppStorage.SP_USER_NAME, usersModel.name);
                 AppStorage.getInstance(context).setValue(AppStorage.SP_USER_EMAIL, usersModel.emailAddress);
                 return true;
+            } else {
+                StaticUtils.showToast(context, "Password doesn't match with our records.");
             }
             return false;
         }
         if (!cursor.isClosed()) {
             cursor.close();
         }
+        StaticUtils.showToast(context, "User doesn't exist in our records. Please register first.");
         return false;
     }
 
@@ -162,6 +166,7 @@ public class DBHelper {
         }
         return arrayList;
     }*/
+    
     public synchronized Cursor selectData(String tableName) {
         databaseHandler.getReadableDatabase();
         return databaseHandler.selectData(tableName);
